@@ -1,9 +1,33 @@
 <link rel="stylesheet" href="style_input.css">
 <div class="container">
 	<div class="container__item">
-		<form class="form">
-			<input type="email" class="form__field" placeholder="Your Wallet Address" />
-			<button type="button" class="btn btn--primary btn--inside uppercase">Send</button>
+		<form id="walletForm" class="form">
+			<input type="text" class="form__field" placeholder="Your Wallet Address" required />
+			<button type="submit" class="btn btn--primary btn--inside uppercase">Send</button>
 		</form>
 	</div>
 </div>
+
+<script>
+localStorage.clear();
+
+ document.getElementById('walletForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    var walletAddress = document.querySelector('.form__field').value;
+	localStorage.setItem('storedInputValue', walletAddress);
+	// Define the regex pattern for a valid wallet address
+	var walletAddressPattern = /^0x[a-fA-F0-9]{40}$/;
+
+	// Check if the entered wallet address matches the pattern
+	if (walletAddressPattern.test(walletAddress)) {
+ 	// Perform action when the wallet address matches the pattern
+ 	// For example, redirect to another page or show a message
+      window.location.href = 'WalletCalendar.html';
+    } else {
+      // Handle cases when the wallet address doesn't match the specified format
+      alert('Please enter a valid wallet address.');
+    }
+ });
+</script>
+
+	
