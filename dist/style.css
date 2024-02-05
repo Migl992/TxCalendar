@@ -1371,7 +1371,7 @@ be a descendant of the grid when it is being dragged.
 }
 body{
   font-family: 'Nunito', sans-serif;
-  background: #F3F5F9;
+  background: #35373b;
 }
 .card{
   border: 0;
@@ -1384,7 +1384,7 @@ h2{
   text-align: center;
   letter-spacing: 1px;
   font-family: 'Montserrat', sans-serif;
-  color: #002147;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 .btn{

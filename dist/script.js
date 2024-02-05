@@ -22,6 +22,11 @@ jQuery(document).ready(function(){
 		 return data.items.map(item => ({
 		   title: item.type, // Use the 'type' field as the event title
 		   start: item.timestamp, // Use the 'timestamp' field as the event start date
+		   from: item.from,
+		   to: item.to,
+		   value: item.value,
+		   thxid: item.id,
+		   method: item.methodId,
 		   // Add other event properties as needed
 		 }));
 	   } catch (error) {
@@ -48,19 +53,23 @@ jQuery(document).ready(function(){
 			 element.find(".fc-title").prepend("<i class='fa fa-"+event.icon+"'></i>");
 		   }
 		 },
-/* 		 dayClick: function() {
-		   jQuery('#modal-view-event-add').modal();
-		 }, */
-		 eventClick: function(event, jsEvent, view) {
-		   jQuery('.event-icon').html("<i class='fa fa-"+event.icon+"'></i>");
-		   jQuery('.event-title').html(event.title);
-		   jQuery('.event-body').html(event.description);
-		   jQuery('.eventUrl').attr('href',event.url);
-		   jQuery('#modal-view-event').modal();
-		 },
+		 eventClick: function(event) {
+			// Populate the modal with the event details
+			jQuery('.event-title').html(event.title);
+			jQuery('.event-body').html(event.from);
+			jQuery('.event-body').empty();
+
+			// Append each piece of information as a separate element
+			jQuery('.event-body').append('<p><strong>From:</strong> ' + event.from + '</p>');
+			jQuery('.event-body').append('<p><strong>To:</strong> ' + event.to + '</p>');
+			jQuery('.event-body').append('<p><strong>Value:</strong> ' + event.value + '</p>');
+			jQuery('.event-body').append('<p><strong>Method:</strong> ' + event.method + '</p>');
+			jQuery('.event-body').append('<p><strong>Link:</strong> <a href="https://routescan.io/tx/' + event.thxid + '" target="_blank">View on RouteScan</a></p>');
+	  
+			// Open the modal
+			jQuery('#modal-view-event').modal();
+		  },
 	   });
 	});
-   
-	// ... existing submit handler and other code ...
-   });
+});
    
