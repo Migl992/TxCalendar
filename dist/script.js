@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
 	var storedInputValue = localStorage.getItem('storedInputValue');
 
 	// API endpoint
-	const apiEndpoint = `https://api.routescan.io/v2/network/mainnet/evm/1/address/${storedInputValue}/transactions?sort=desc&limit=100`;
+	const apiEndpoint = `https://api.routescan.io/v2/network/mainnet/evm/all/address/${storedInputValue}/transactions?sort=desc&limit=100`;
    
 	// Headers for the API request
 	const headers = new Headers({
