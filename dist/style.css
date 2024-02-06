@@ -1377,6 +1377,15 @@ body{
   border: 0;
   background: transparent;
 }
+.chain-logo {
+  height:  15px;
+  width: auto;
+  image-rendering: -webkit-optimize-contrast; /* For Safari */
+  image-rendering: -moz-crisp-edges; /* For Firefox */
+  image-rendering: -o-crisp-edges; /* For Opera */
+  image-rendering: crisp-edges; /* Standard syntax */
+  -ms-interpolation-mode: nearest-neighbor; /* For IE */
+}
 h2{
   text-transform: uppercase;
   font-weight: 700;
