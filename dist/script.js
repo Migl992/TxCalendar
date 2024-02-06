@@ -18,6 +18,39 @@ jQuery(document).ready(function(){
 		   throw new Error(`HTTP error! status: ${response.status}`);
 		 }
 		 const data = await response.json();
+		 const chainIdMapping = {
+			"324": "zKSync Era",
+			"1": "Ethereum",
+			"53935": "DFK",
+			"43114": "Avalanche C-Chain",
+			"8453": "Base",
+			"5000": "Mantle",
+			"1992": "Hubble Exchange",
+			"19": "Songbird Canary",
+			"432204": "Dexalot",
+			"10": "Optimism",
+			"14": "Flare Mainnet",
+			"56288": "Boba BNB",
+			"7777777": "Zora",
+			"88888": "Chiliz",
+			"1088": "Metis",
+			"4337": "Beam",
+			"1234": "StepNetwork",
+			"6119": "UPTN",
+			"8888": "XANAchain",
+			"3011": "PLAYA3ULL Games",
+			"333000333": "Meld",
+			"288": "Boba Ethereum",
+			"10507": "Numbers",
+			"7979": "DOS",
+			"73772": "Swimmer",
+			"24052022": "Wraptag",
+			"1228": "XPLUS",
+			"2044": "Shrapnel",
+			"262018": "Loco Legends",
+			"1080": "Mintara",
+			"34443": "Mode"
+		  };
 		 
 		 // Map the API response to the format expected by FullCalendar
 		 return data.items.map(item => ({
@@ -28,6 +61,7 @@ jQuery(document).ready(function(){
 		   value: item.value,
 		   thxid: item.id,
 		   method: item.methodId,
+		   chain: chainIdMapping[item.chainId] || 'Unknown Chain',
 		   // Add other event properties as needed
 		 }));
 	   } catch (error) {
@@ -65,6 +99,7 @@ jQuery(document).ready(function(){
 			jQuery('.event-body').append('<p><strong>To:</strong> ' + event.to + '</p>');
 			jQuery('.event-body').append('<p><strong>Value:</strong> ' + event.value + '</p>');
 			jQuery('.event-body').append('<p><strong>Method:</strong> ' + event.method + '</p>');
+			jQuery('.event-body').append('<p><strong>Chain:</strong> ' + event.chain + '</p>');
 			jQuery('.event-body').append('<p><strong>Link:</strong> <a href="https://routescan.io/tx/' + event.thxid + '" target="_blank">View on RouteScan</a></p>');
 	  
 			// Open the modal
