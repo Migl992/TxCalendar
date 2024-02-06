@@ -1,7 +1,7 @@
 :root {
-	background: #f5f6fa;
-	color: #9c9c9c;
-	font: 1rem "PT Sans", sans-serif;
+	background: #333; /* Dark background */
+	color: #ccc; /* Lighter text color */
+	font:  1rem "PT Sans", sans-serif;
 }
 
 html,
@@ -44,9 +44,9 @@ a:hover {
 .btn--primary {
 	background: #7f8ff4;
 	color: #fff;
-	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-	border-radius: 2px;
-	padding: 12px 36px;
+	box-shadow:  0  0  10px  2px rgba(0,  0,  0,  0.1);
+	border-radius:  2px;
+	padding:  12px  36px;
 }
 
 .btn--primary:hover {
@@ -55,7 +55,7 @@ a:hover {
 
 .btn--primary:active {
 	background: #7f8ff4;
-	box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset  0  0  10px  2px rgba(0,  0,  0,  0.2);
 }
 
 .btn--inside {
@@ -63,6 +63,7 @@ a:hover {
 }
 
 .form__field {
+	align: center;
 	width: 470px;
 	background: #fff;
 	color: #a3a3a3;
@@ -71,4 +72,34 @@ a:hover {
 	border: 0;
 	outline: 0;
 	padding: 22px 18px;
+}
+
+/* Style for the title container */
+.title {
+	text-align: center;
+	margin-bottom:  20px; /* Adjust space between title and form */
+}
+
+/* Style for the title heading */
+.title__heading {
+	font-size:  2rem; /* Make the title larger */
+	margin-bottom:  10px; /* Space between the title and explanation */
+}
+
+/* Style for the title explanation */
+.title__explanation {
+	text-align: center;
+	font-size:  1rem; /* Smaller font size for the explanation */
+	color: #9c9c9c; /* Match the color scheme */
+}
+
+/* Optional: Style for the placeholder text */
+.form__field::placeholder {
+	text-align: center;
+	color: #9c9c9c; /* Placeholder text color */
+	font-style: italic; /* Optional: Italicize placeholder text */
+}
+
+.form {
+	align-items: center; /* Centers children horizontally */
 }

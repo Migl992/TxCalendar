@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="style_input.css">
 <div class="container">
 	<div class="container__item">
+		<!-- Add a title and explanation here -->
+		<div class="title">
+			<h1 class="title__heading">The Crypto Calendar</h1>
+			<p class="title__explanation">  Enter your address to generate a calendar view of all your transactions.</p>
+		</div>
+		<!-- Existing form goes here -->
 		<form id="walletForm" class="form">
 			<input type="text" class="form__field" placeholder="Your Wallet Address" required />
 			<button type="submit" class="btn btn--primary btn--inside uppercase">Send</button>
 		</form>
 	</div>
 </div>
+
 
 <script>
 localStorage.clear();
