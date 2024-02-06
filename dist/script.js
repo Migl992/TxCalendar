@@ -83,6 +83,8 @@ jQuery(document).ready(function(){
 		   right: 'today prev,next'
 		 },
 		 events: events, // Set the events fetched from the API
+		 eventLimit:  5, // Limit to  5 events per day
+    	 eventLimitText: ' more',
 		 eventRender: function(event, element) {
 			// Check if the chain property is an object and has an imageUrl property
 			const chainInfo = typeof event.chain === 'object' && event.chain !== null ? event.chain : { name: event.chain, imageUrl: '' };
