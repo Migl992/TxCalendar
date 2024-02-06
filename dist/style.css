@@ -1371,11 +1371,12 @@ be a descendant of the grid when it is being dragged.
 }
 body{
   font-family: 'Nunito', sans-serif;
-  background: #35373b;
+  background: #20212e;
 }
 .card{
   border: 0;
   background: transparent;
+
 }
 .chain-logo {
   height:  15px;
@@ -1410,7 +1411,7 @@ h2{
   box-shadow: none;
 }
 .btn.btn-primary{
-  background: #002147;
+  background: #191a23;
   color: #ffffff;
 }
 .form-group label{
