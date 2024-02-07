@@ -102,3 +102,46 @@ a:hover {
 .form {
 	align-items: center; /* Centers children horizontally */
 }
+
+/* Header styling */
+.header {
+	display: flex;
+	justify-content: flex-end;
+	padding:   1rem;
+	background: #20212e; /* Dark background */
+  }
+  
+  /* Connect Wallet button styling */
+  .btn--connect {
+	background: #7f8ff4; /* Crypto blue */
+	color: #fff; /* White text */
+	border:  2px solid #7f8ff4; /* Border matching the background */
+	border-radius:   50px; /* Rounded corners */
+	width:   140px; /* Width of the button */
+	height:   35px; /* Height of the button */
+	text-align: center; /* Horizontally centers the text */
+	font-weight: bold; /* Bold text for emphasis */
+	box-shadow:   0   2px   5px rgba(0,   0,   0,   0.15); /* Shadow for depth */
+	margin-right:   1rem; /* Margin to keep the button away from the edge */
+	transition: background   0.3s ease, transform  0.3s ease; /* Transition effects for hover and active states */
+  }
+  
+  .btn--connect:hover {
+	background: #6c7ff2; /* Slightly darker blue on hover */
+	transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  .btn--connect:active {
+	transform: translateY(0); /* Reset the lift when the button is released */
+  }
+  
+ /* Style for the disclaimer */
+.disclaimer {
+	font-size:   0.8rem; /* Smaller font size */
+	color: #9c9c9c; /* Color matching the description text */
+	margin-top:   1rem; /* Space above the disclaimer */
+	text-align: center; /* Center the text */
+  }
+  
+  
+  

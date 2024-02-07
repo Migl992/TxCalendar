@@ -1,16 +1,20 @@
-<link rel="stylesheet" href="style_input.css">
+<div class="header">
+	<link rel="stylesheet" href="style_input.css">
+	<button id="connectWalletButton" class="btn btn--secondary btn--connect">Connect Wallet</button>
+  </div>
 <div class="container">
 	<div class="container__item">
-		<!-- Add a title and explanation here -->
 		<div class="title">
 			<h1 class="title__heading">The Crypto Calendar</h1>
 			<p class="title__explanation">  Enter your address to generate a calendar view of all your transactions.</p>
 		</div>
-		<!-- Existing form goes here -->
 		<form id="walletForm" class="form">
 			<input type="text" class="form__field" placeholder="Your Wallet Address" required />
 			<button type="submit" class="btn btn--primary btn--inside uppercase">Send</button>
 		</form>
+		<small class="disclaimer">
+		Note: This is a demo for testing purposes. <br>It retrieves your last 100 transactions checking more than 30 chains.
+		</small>
 	</div>
 </div>
 
@@ -28,13 +32,23 @@ localStorage.clear();
 	// Check if the entered wallet address matches the pattern
 	if (walletAddressPattern.test(walletAddress)) {
  	// Perform action when the wallet address matches the pattern
- 	// For example, redirect to another page or show a message
       window.location.href = 'WalletCalendar.html';
     } else {
       // Handle cases when the wallet address doesn't match the specified format
       alert('Please enter a valid wallet address.');
     }
  });
+
+//code for connecting to the wallet here
+document.getElementById('connectWalletButton').addEventListener('click', async () => {
+  try {
+    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+    const walletAddress = accounts[0];
+    document.querySelector('.form__field').value = walletAddress;
+  } catch (error) {
+    console.error('Error connecting to the wallet:', error);
+  }
+});
 </script>
 
 	
